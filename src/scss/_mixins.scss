@@ -1,0 +1,34 @@
+@use "sass:math";
+
+@mixin viewport-md {
+    @media (min-width: 767px) {
+        @content;
+    }
+}
+
+@mixin text-gradient {
+    background: var(--hero-name-background);
+    background-clip: text;
+    color: transparent;
+}
+
+@mixin gradient-border($gradient, $width:2px, $radius:12px) {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: $gradient;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    inset: 0;
+    padding: $width;
+    border-radius: $radius;
+}
+
+@function percent($number1 ,$number2) {
+    @return math.percentage(math.div($number1, $number2))
+}

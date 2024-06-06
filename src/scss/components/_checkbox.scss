@@ -1,0 +1,25 @@
+.checkbox {
+    position: relative;
+
+    &__input {
+        position: absolute;
+        width: 0;
+        height: 0;
+        opacity: 0;
+
+        &:checked + .checkbox__label {
+
+        }
+    }
+
+
+    &__label {
+ 
+    }
+
+    &__text {
+
+    }
+}
+
+
